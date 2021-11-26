@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import APP from "./components/App";
 
 ReactDOM.render(
-  <h1>Hello Sasan</h1>,
+  <React.StrictMode>
+      <APP/>
+  </React.StrictMode>,
   document.getElementById('root')
 );
