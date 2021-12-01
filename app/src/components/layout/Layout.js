@@ -1,5 +1,6 @@
 import React from 'react';
 import useStyles from './style';
+import {Typography} from "@material-ui/core";
 
 
 const Layout = () => {
@@ -8,7 +9,9 @@ const Layout = () => {
     return (
         <div className={classes.root}>
             <div className={classes.rightSidebar}>
-                right side bar
+                <Typography component="h1">
+                    منوی سمت راست
+                </Typography>
             </div>
             <div className={classes.mainPart}>
                 main part
