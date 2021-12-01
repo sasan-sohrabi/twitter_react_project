@@ -7,18 +7,20 @@ const useStyles = makeStyles({
         width: '100%',
         overflow: 'hidden'
     },
-    rightSidebar: {
-        backgroundColor: '#BDC3C7',
-        width: "18%"
-    },
     leftSidebar: {
-        backgroundColor: '#BDC3C7',
+        backgroundColor: 'white',
         width: "25%"
     },
     mainPart: {
-        backgroundColor: '#BDC3C7',
+        backgroundColor: 'white',
         flex: 1
     },
+    divider: {
+        height: '100%',
+        width: 1,
+        backgroundColor: "#7EBADF !important",
+        filter: "opacity(0.5)"
+    }
 });
 
 export default useStyles;

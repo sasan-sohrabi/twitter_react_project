@@ -1,6 +1,7 @@
 import React from 'react';
 import useStyles from './style';
-import {Typography} from "@material-ui/core";
+import RightSidebar from "./rightSidebar/RightSidebar";
+import {Divider} from "@material-ui/core";
 
 
 const Layout = () => {
@@ -8,11 +9,8 @@ const Layout = () => {
 
     return (
         <div className={classes.root}>
-            <div className={classes.rightSidebar}>
-                <Typography component="h1">
-                    منوی سمت راست
-                </Typography>
-            </div>
+            <RightSidebar/>
+            <Divider orientation={"vertical"} className={classes.divider}/>
             <div className={classes.mainPart}>
                 main part
             </div>
