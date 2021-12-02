@@ -2,16 +2,37 @@ import React from 'react';
 import useStyles from './style';
 import {ButtonBase, Divider, Grid, Typography} from "@material-ui/core";
 
-const Twitter = () => {
+const profileInfo = [
+    {
+        'name': 'سامسونگ',
+        'id': '@samsung',
+        'url': 'images/samsung.png',
+
+    },
+    {
+        'name': 'شیاومی',
+        'id': '@xiaomi',
+        'url': 'images/xiaomi.png',
+
+    },
+    {
+        'name': 'بیلگیتس',
+        'id': '@bill',
+        'url': 'images/bil.png',
+
+    },
+]
+
+const Twitter = ({name, id, url}) => {
     const classes = useStyles();
     return <ButtonBase><Grid container style={{marginTop: '0.9rem'}}>
-        <img src={"images/user_img.png"} alt={'profile'} className={classes.userImg}/>
+        <img src={url} alt={'profile'} className={classes.userImg}/>
         <Grid item container direction={"column"} style={{width: 'max-content'}} className={classes.profText}>
             <Typography className={classes.profName}>
-                ساسان سهرابی
+                {name}
             </Typography>
             <Typography className={classes.profId}>
-                Sasan.Sohrabi
+                {id}
             </Typography>
         </Grid>
     </Grid>
@@ -37,11 +58,10 @@ const LeftSidebar = () => {
                         بهترین خبرنگاران
                     </Typography>
                     <Divider style={{marginLeft: -24, marginRight: -24, marginTop: '.5rem'}}/>
-                    <Twitter/>
-                    <Twitter/>
-                    <Twitter/>
-                    <Twitter/>
-                    <Twitter/>
+                    {
+                        profileInfo.map(item => <Twitter name={item.name} id={item.id} url={item.url}/>)
+                    }
+                    {/*<Twitter/>*/}
                 </Grid>
             </Grid>
         </div>
