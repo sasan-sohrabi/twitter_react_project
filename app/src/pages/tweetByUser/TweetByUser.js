@@ -3,6 +3,8 @@ import useStyles from "../home/style";
 import Header from "../../components/header/Header";
 import {Divider} from "@material-ui/core";
 import TwittList from "../home/components/TwittList";
+import {Person as UserIcon} from "@material-ui/icons";
+
 
 const tweets = [
     {
@@ -72,15 +74,15 @@ const tweets = [
     },
 ]
 
-const TweetByHashtag = () => {
+const TweetByUser = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Header title={"کرونا ویروس"} icon={<img src={"images/hashtag.png"} alt="hashtag"/>}/>
+            <Header title={"ساسان سهرابی"} icon={<UserIcon/>}/>
             <Divider classes={classes.divider}/>
             <TwittList data={tweets}/>
         </div>
     );
 };
 
-export default TweetByHashtag;
+export default TweetByUser;

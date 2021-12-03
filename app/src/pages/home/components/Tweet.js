@@ -5,6 +5,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const Tweet = ({data}) => {
     const classes = useStyles();
+
+    const renderTweet = (text) => {
+        return {__html: text.replace(/#\S+/g, "<a href='/tags/$&' style='color: blue'>$&</a>")};
+    };
+
     return (
         <div className={classes.TwittItem}>
             <Grid container>
@@ -17,9 +22,7 @@ const Tweet = ({data}) => {
                         <Typography className={classes.TwittItemId}>
                             {data.sender.id}
                         </Typography>
-                        <Typography className={classes.TwittText}>
-                            {data.text}
-                        </Typography>
+                        <Typography dangerouslySetInnerHTML={renderTweet(data.text)} className={classes.TwittText}/>
                     </Grid>
                 </Grid>
             </Grid>
