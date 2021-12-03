@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/styles';
+import {makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles({
     root: {
@@ -20,6 +20,11 @@ const useStyles = makeStyles({
         width: 1,
         backgroundColor: "#7EBADF !important",
         filter: "opacity(0.5)"
+    },
+    content: {
+        flex: 1,
+        overflowY: "auto",
+        backgroundColor: "white"
     }
 });
 

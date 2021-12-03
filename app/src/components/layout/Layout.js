@@ -13,7 +13,9 @@ const Layout = () => {
         <div className={classes.root}>
             <RightSidebar/>
             <Divider orientation={"vertical"} className={classes.divider}/>
-            <Home/>
+            <div className={classes.content}>
+                <Home/>
+            </div>
             <Divider orientation={"vertical"} className={classes.divider}/>
             <LeftSidebar/>
         </div>

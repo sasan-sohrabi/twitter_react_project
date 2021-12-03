@@ -1,10 +1,8 @@
 import React from 'react';
-import useStyles from "./style";
+import useStyles from "../home/style";
 import Header from "../../components/header/Header";
 import {Divider} from "@material-ui/core";
-import NewTwitt from "./components/NewTwitt";
-import TwittList from "./components/TwittList";
-import HomeIcon from "@material-ui/icons/Home";
+import TwittList from "../home/components/TwittList";
 
 const tweets = [
     {
@@ -78,9 +76,8 @@ const Home = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Header title={"خانه"} icon={<HomeIcon/>}/>
+            <Header title={"کرونا ویروس"} icon={<img src={"images/hashtag.png"} alt="hashtag"/>}/>
             <Divider classes={classes.divider}/>
-            <NewTwitt/>
             <TwittList data={tweets}/>
         </div>
     );
