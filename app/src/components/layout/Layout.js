@@ -4,6 +4,9 @@ import RightSidebar from "./rightSidebar/RightSidebar";
 import {Divider} from "@material-ui/core";
 import LeftSidebar from "./leftSidebar/LeftSidebar";
 import Home from "../../pages/home/Home";
+import P404 from "../../pages/404/404";
+
+import {BrowserRouter, Route} from "react-router-dom";
 
 
 const Layout = () => {
@@ -14,7 +17,10 @@ const Layout = () => {
             <RightSidebar/>
             <Divider orientation={"vertical"} className={classes.divider}/>
             <div className={classes.content}>
-                <Home/>
+                <BrowserRouter>
+                    <Route exact  path={"/"} component={Home} />
+                    <Route component={P404}/>
+                </BrowserRouter>
             </div>
             <Divider orientation={"vertical"} className={classes.divider}/>
             <LeftSidebar/>
