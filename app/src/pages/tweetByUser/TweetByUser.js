@@ -4,9 +4,7 @@ import Header from "../../components/header/Header";
 import {Divider} from "@material-ui/core";
 import TwittList from "../home/components/TwittList";
 import {Person as UserIcon} from "@material-ui/icons";
-import axios from "axios";
-
-
+import {getAllTweets} from "../../api/api_tweet";
 
 
 const TweetByUser = (props) => {
@@ -14,11 +12,10 @@ const TweetByUser = (props) => {
     const [tweets, setTweets] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/tweets")
-            .then(response => {
-                const data = response.data;
-                setTweets(data);
-            }).catch(error => {
+        getAllTweets((isOk, data) => {
+            if (!isOk)
+                return alert(data.message)
+            else setTweets(data)
         })
     }, []);
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {ButtonBase, Grid, Typography} from "@material-ui/core";
 import useStyles from './style';
 import {Link} from "react-router-dom";
-import axios from "axios";
+import {getHashTags} from "../../../api/api_tweet";
 
 
 const RightSidebar = () => {
@@ -10,11 +10,10 @@ const RightSidebar = () => {
     const [hashtags, setHashtags] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/hashtags")
-            .then(response => {
-                const data = response.data;
-                setHashtags(data);
-            }).catch(error => {
+        getHashTags((isOk, data)=>{
+            if(!isOk)
+                return alert(data.message)
+            else setHashtags(data)
         })
     }, []);
     return (

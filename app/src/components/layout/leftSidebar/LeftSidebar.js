@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import useStyles from './style';
 import {ButtonBase, Divider, Grid, Typography} from "@material-ui/core";
 import {Link} from "react-router-dom";
-import axios from "axios";
+import {getUsers} from "../../../api/api_tweet";
 
 
 const Twitter = ({name, id, url}) => {
@@ -26,11 +26,10 @@ const LeftSidebar = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/users")
-            .then(response => {
-                const data = response.data;
-                setUsers(data);
-            }).catch(error => {
+        getUsers((isOk, data)=>{
+            if(!isOk)
+                return alert(data.message)
+            else setUsers(data)
         })
     }, []);
     const classes = useStyles();
