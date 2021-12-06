@@ -8,8 +8,13 @@ const theme = createMuiTheme({
         }
     },
     overrides: {
-        MuiTypography:{
-            root:{
+        MuiTypography: {
+            root: {
+                fontFamily: "shabnam !important"
+            }
+        },
+        MuiButton: {
+            label: {
                 fontFamily: "shabnam !important"
             }
         }
