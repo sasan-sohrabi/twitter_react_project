@@ -1,0 +1,75 @@
+{
+  "tweets": [
+    {
+      "sender": {
+        "name": "ساسان سهرابی",
+        "id": "@sasan.sohrabi",
+        "img": "/images/user_img.png"
+      },
+      "like": 2,
+      "text": "انرژی خورشیدی می تواند جایگزین  #سیب بسیار مفیدی برای جامعه باشد"
+    },
+    {
+      "sender": {
+        "name": "ساسان سهرابی",
+        "id": "@sasan.sohrabi",
+        "img": "/images/user_img.png"
+      },
+      "like": 10,
+      "text": "انرژی خورشیدی می تواند جایگزین  #سیب بسیار مفیدی برای جامعه باشد"
+    },
+    {
+      "sender": {
+        "name": "ساسان سهرابی",
+        "id": "@sasan.sohrabi",
+        "img": "/images/user_img.png"
+      },
+      "like": 50,
+      "text": "انرژی خورشیدی می تواند جایگزین  #سیب بسیار مفیدی برای جامعه باشد"
+    },
+    {
+      "sender": {
+        "name": "ساسان سهرابی",
+        "id": "@sasan.sohrabi",
+        "img": "/images/user_img.png"
+      },
+      "like": 50,
+      "text": "انرژی خورشیدی می تواند جایگزین  #سیب بسیار مفیدی برای جامعه باشد"
+    },
+    {
+      "sender": {
+        "name": "ساسان سهرابی",
+        "id": "@sasan.sohrabi",
+        "img": "/images/user_img.png"
+      },
+      "like": 45,
+      "text": "انرژی خورشیدی می تواند جایگزین  #سیب بسیار مفیدی برای جامعه باشد"
+    }
+  ],
+  "hashTags": [
+    "پرچمـدارـجدید",
+    "کروناـویروس",
+    "سامسونگ",
+    "هلوـسامر",
+    "انرژی",
+    "خورشیدی",
+    "بهینهسازی"
+  ],
+  "users": [
+    {
+      "name": "سامسونگ",
+      "id": "@samsung",
+      "url": "/images/samsung.png"
+    },
+    {
+      "name": "شیاومی",
+      "id": "@xiaomi",
+      "url": "/images/xiaomi.png"
+    },
+    {
+      "name": "بیلگیتس",
+      "id": "@bill",
+      "url": "/images/bil.png"
+    }
+  ]
+}

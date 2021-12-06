@@ -1,27 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import useStyles from './style';
 import {ButtonBase, Divider, Grid, Typography} from "@material-ui/core";
+import {Link} from "react-router-dom";
+import axios from "axios";
 
-const profileInfo = [
-    {
-        'name': 'سامسونگ',
-        'id': '@samsung',
-        'url': 'images/samsung.png',
-
-    },
-    {
-        'name': 'شیاومی',
-        'id': '@xiaomi',
-        'url': 'images/xiaomi.png',
-
-    },
-    {
-        'name': 'بیلگیتس',
-        'id': '@bill',
-        'url': 'images/bil.png',
-
-    },
-]
 
 const Twitter = ({name, id, url}) => {
     const classes = useStyles();
@@ -40,11 +22,22 @@ const Twitter = ({name, id, url}) => {
 }
 
 const LeftSidebar = () => {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:3000/users")
+            .then(response => {
+                const data = response.data;
+                setUsers(data);
+            }).catch(error => {
+        })
+    }, []);
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Grid container direction={"row-reverse"}>
-                <img src={"images/user_img.png"} alt={'profile'} className={classes.userImg}/>
+                <img src={"/images/user_img.png"} alt={'profile'} className={classes.userImg}/>
                 <Grid item container direction={"column"} style={{width: 'max-content'}} className={classes.profText}>
                     <Typography className={classes.profName}>
                         ساسان سهرابی
@@ -59,9 +52,9 @@ const LeftSidebar = () => {
                     </Typography>
                     <Divider style={{marginLeft: -24, marginRight: -24, marginTop: '.5rem'}}/>
                     {
-                        profileInfo.map(item => <Twitter name={item.name} id={item.id} url={item.url}/>)
+                        users.map(item => <Link to={`/users/${item.name}`}><Twitter name={item.name} id={item.id}
+                                                                                          url={item.url}/></Link>)
                     }
-                    {/*<Twitter/>*/}
                 </Grid>
             </Grid>
         </div>

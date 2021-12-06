@@ -7,7 +7,7 @@ const NewTwitt = () => {
     return (
         <div className={classes.newTwitt}>
             <Grid container alignItems={'center'}>
-                <img src={"images/user_img.png"} className={classes.userImg} alt={"user"}/>
+                <img src={"/images/user_img.png"} className={classes.userImg} alt={"user"}/>
                 <textarea placeholder={"توییت کن ..."} className={classes.input}/>
             </Grid>
             <Grid container direction={"row-reverse"} style={{marginTop: 16}} alignItems={"center"}>
@@ -15,7 +15,7 @@ const NewTwitt = () => {
                     توییت
                 </Button>
                 <IconButton>
-                <img src={"images/tweetpic.png"} className={classes.newTweetImg} alt={'tweet'}/>
+                <img src={"/images/tweetpic.png"} className={classes.newTweetImg} alt={'tweet'}/>
                 </IconButton>
             </Grid>
         </div>

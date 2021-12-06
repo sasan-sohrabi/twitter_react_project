@@ -2,3 +2,12 @@ body {
     margin: 0;
     direction: rtl;
 }
+
+a {
+    text-decoration-line: none;
+    color: unset;
+}
+
+a:visited{
+    color: unset;
+}
