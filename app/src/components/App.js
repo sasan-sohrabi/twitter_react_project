@@ -6,6 +6,8 @@ import Home from "../pages/home/Home";
 import TweetByHashtag from "../pages/tweetByHashtag/TweetByHashtag";
 import TweetByUser from "../pages/tweetByUser/TweetByUser";
 import AuthPage from "../pages/auth/AuthPage";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const APP = () => {
     return (
@@ -22,6 +24,7 @@ const APP = () => {
                     </Layout>
                 }}/>
             </Switch>
+            <ToastContainer/>
         </BrowserRouter>
     );
 };

@@ -1,7 +1,7 @@
-import {getAxiosInstance} from "./api";
+import {getAxiosInstanceJsonServer} from "./api";
 
 export const getAllTweets = (callback) => {
-    getAxiosInstance().get("/tweets")
+    getAxiosInstanceJsonServer().get("/tweets")
         .then(response => {
             const data = response.data;
             callback(true, data);
@@ -11,7 +11,7 @@ export const getAllTweets = (callback) => {
 };
 
 export const getHashTags = (callback) => {
-    getAxiosInstance().get("/hashtags")
+    getAxiosInstanceJsonServer().get("/hashtags")
         .then(response => {
             const data = response.data;
             callback(true, data);
@@ -21,7 +21,7 @@ export const getHashTags = (callback) => {
 };
 
 export const getUsers = (callback) => {
-    getAxiosInstance().get("/users")
+    getAxiosInstanceJsonServer().get("/users")
         .then(response => {
             const data = response.data;
             callback(true, data);
