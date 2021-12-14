@@ -65,6 +65,7 @@ const AuthPage = () => {
                 localStorage.setItem("name", data.name);
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("x-auth-token", data["x-auth-token"]);
+                window.location.reload();
             })
         }
 
@@ -83,6 +84,7 @@ const AuthPage = () => {
                 localStorage.setItem("name", data.name);
                 localStorage.setItem("username", data.username);
                 localStorage.setItem("x-auth-token", data["x-auth-token"]);
+                window.location.reload();
             })
         }
 

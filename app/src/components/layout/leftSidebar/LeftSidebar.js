@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import useStyles from './style';
-import {ButtonBase, Divider, Grid, Typography} from "@material-ui/core";
+import {ButtonBase, Divider, Grid, Menu, MenuItem, Typography} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import {getUsers} from "../../../api/api_tweet";
 
@@ -24,6 +24,7 @@ const Twitter = ({name, id, url}) => {
 const LeftSidebar = () => {
 
     const [users, setUsers] = useState([]);
+    const [anchorMenu, setAnchorMenu] = useState([]);
 
     useEffect(() => {
         getUsers((isOk, data)=>{
@@ -32,10 +33,18 @@ const LeftSidebar = () => {
             else setUsers(data)
         })
     }, []);
+
+    const handleToggleMenu=(e)=>{
+        if(anchorMenu)
+            setAnchorMenu(null)
+        else
+            setAnchorMenu(e.currentTarget)
+    };
+
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Grid container direction={"row-reverse"}>
+            <Grid container direction={"row-reverse"} onClick={handleToggleMenu} style={{cursor: 'pointer'}}>
                 <img src={"/images/user_img.png"} alt={'profile'} className={classes.userImg}/>
                 <Grid item container direction={"column"} style={{width: 'max-content'}} className={classes.profText}>
                     <Typography className={classes.profName}>
@@ -56,6 +65,10 @@ const LeftSidebar = () => {
                     }
                 </Grid>
             </Grid>
+            <Menu open={Boolean(anchorMenu)} onClose={()=>setAnchorMenu(null)} anchorEl={anchorMenu}>
+                <MenuItem onClick={()=>{localStorage.clear();
+                    window.location.reload()}}>خروج</MenuItem>
+            </Menu>
         </div>
     );
 };
