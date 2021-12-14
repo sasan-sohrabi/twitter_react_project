@@ -41,17 +41,23 @@ const LeftSidebar = () => {
             setAnchorMenu(e.currentTarget)
     };
 
+    const getImage=()=>{
+        if(localStorage.getItem("image"))
+            return localStorage.getItem("image")
+        return "/images/user-profiles.png"
+    }
+
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Grid container direction={"row-reverse"} onClick={handleToggleMenu} style={{cursor: 'pointer'}}>
-                <img src={"/images/user_img.png"} alt={'profile'} className={classes.userImg}/>
+                <img src={getImage()} alt={'profile'} className={classes.userImg}/>
                 <Grid item container direction={"column"} style={{width: 'max-content'}} className={classes.profText}>
                     <Typography className={classes.profName}>
-                        ساسان سهرابی
+                        {localStorage.getItem("name")}
                     </Typography>
                     <Typography className={classes.profId}>
-                        Sasan.Sohrabi
+                        {localStorage.getItem("username")}
                     </Typography>
                 </Grid>
                 <Grid item container direction={"column"} className={classes.twitterRoot}>
