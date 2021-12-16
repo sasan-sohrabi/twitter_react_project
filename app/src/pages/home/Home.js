@@ -13,19 +13,24 @@ const Home = () => {
 
     const [tweets, setTweets] = useState([]);
 
-    useEffect(() => {
-        getAllTweets((isOk, data)=>{
-            if(!isOk)
+    const updateTweets = () => {
+        getAllTweets((isOk, data) => {
+            if (!isOk)
                 return alert(data.message)
             else setTweets(data)
         })
+    };
+
+    useEffect(() => {
+        updateTweets()
     }, []);
+
 
     return (
         <div className={classes.root}>
             <Header title={"خانه"} icon={<HomeIcon/>}/>
             <Divider classes={classes.divider}/>
-            <NewTwitt/>
+            <NewTwitt updateTweets={updateTweets}/>
             <TwittList data={tweets}/>
         </div>
     );

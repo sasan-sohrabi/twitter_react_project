@@ -29,3 +29,13 @@ export const getUsers = (callback) => {
         callback(false, error);
     })
 };
+
+export const newTweetRequest = (callback) => {
+    getAxiosInstance().post("/newTweet ")
+        .then(response => {
+            const data = response.data;
+            callback(true, data);
+        }).catch(error => {
+        callback(false, error);
+    })
+};
