@@ -10,17 +10,23 @@ const Tweet = ({data}) => {
         return {__html: text.replace(/#\S+/g, "<a href='/tags/$&' style='color: blue'>$&</a>")};
     };
 
+    const getImage=()=>{
+        if (data.user.image)
+            return data.user.image
+        return  "/images/user-profiles.png"
+    }
+
     return (
         <div className={classes.TwittItem}>
             <Grid container>
-                <img src={data.sender.img} className={classes.userImg} alt={"user"}/>
+                <img src={getImage()} className={classes.userImg} alt={"user"}/>
                 <Grid item container direction={"column"} style={{flex: 1, marginRight: '1rem'}}>
                     <Grid item container>
                         <Typography className={classes.TwittItemName}>
-                            {data.sender.name}
+                            {data.user.name}
                         </Typography>
                         <Typography className={classes.TwittItemId}>
-                            {data.sender.id}
+                            {data.user.id}
                         </Typography>
                         <Typography dangerouslySetInnerHTML={renderTweet(data.text)} className={classes.TwittText}/>
                     </Grid>

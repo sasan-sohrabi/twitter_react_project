@@ -1,7 +1,7 @@
-import {getAxiosInstanceJsonServer} from "./api";
+import {getAxiosInstance, getAxiosInstanceJsonServer} from "./api";
 
 export const getAllTweets = (callback) => {
-    getAxiosInstanceJsonServer().get("/tweets")
+    getAxiosInstance().post("/getAllTweet")
         .then(response => {
             const data = response.data;
             callback(true, data);
