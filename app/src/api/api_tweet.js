@@ -11,7 +11,7 @@ export const getAllTweets = (callback) => {
 };
 
 export const getHashTags = (callback) => {
-    getAxiosInstanceJsonServer().get("/hashtags")
+    getAxiosInstance().get("/getAllHashtags")
         .then(response => {
             const data = response.data;
             callback(true, data);
@@ -21,7 +21,7 @@ export const getHashTags = (callback) => {
 };
 
 export const getUsers = (callback) => {
-    getAxiosInstanceJsonServer().get("/users")
+    getAxiosInstance().get("/getAllUser")
         .then(response => {
             const data = response.data;
             callback(true, data);

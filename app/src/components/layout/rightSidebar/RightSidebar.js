@@ -36,11 +36,11 @@ const RightSidebar = () => {
             <Grid container direction={"column"} alignItems={"center"}>
                 {
                     hashtags.map(item => <ButtonBase className={classes.hashtagParent}>
-                        <Link to={"/hashtags/" + item} style={{width: '100%'}}>
+                        <Link to={"/hashtags/" + item.text} style={{width: '100%'}}>
                             <Grid item container>
                                 <img src={"/images/hashtag.png"} alt="hashtag"/>
                                 <Typography className={classes.hashtag}>
-                                    {item}
+                                    {item.text}
                                 </Typography>
                             </Grid>
                         </Link>
